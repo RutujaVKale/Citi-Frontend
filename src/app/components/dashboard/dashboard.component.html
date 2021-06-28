@@ -1,0 +1,39 @@
+
+
+<div class="text-centre mt ">
+    <button mat-raised-button style="background-color: skyblue" (click)="getLargeCapStocks()">Large Cap Companies</button>
+    <button mat-raised-button style="background-color:skyblue; margin-left:20px;" (click)="getMidCapStocks()">Mid cap Comapnies</button>
+    <button mat-raised-button style="background-color:skyblue; margin-left:20px;" (click)="getSmallCapStocks()">Small cap Comapnies</button>
+    <button mat-raised-button mat-raised-button style="background-color:springgreen; margin-left:20px;" (click)="savedStocks()">Saved Stocks</button>
+    <!-- <span><a mat-raised-button routerLink="savestock">Saved stocks</a></span> -->
+
+</div>
+
+
+<table class="table table-hover mt">
+    <tr class="table-active">
+        <th scope="col">Company Name</th>
+        <th> Symbol</th>
+        <th>Price</th>
+        <th>Market Cap</th>
+        <th>Opening Price</th>
+        <th>Previous closing price</th>
+        <th>Dividend</th>
+        <th>Volume</th>
+        <th>Action</th>
+
+    </tr>
+    <!-- id="{{'row'+i}}" -->
+    <tr class="damn" *ngFor="let obj of StocksArray; let i = index ">
+        <td id="name" class="table-info">{{obj.companyName}}</td>
+        <td class="table-secondary">{{obj.companySymbol}}</td>
+        <td class="table-secondary">{{obj.price}}</td>
+        <td class="table-secondary">{{obj.marketCap}}</td>
+        <td class="table-secondary">{{obj.openPrice}}</td>
+        <td class="table-secondary">{{obj.previousClosingPrice}}</td>
+        <td class="table-secondary">{{obj.dividend}}</td>
+        <td class="table-secondary">{{obj.volume}}</td>
+        <td class="table-secondary"><button id="'row'+i" (click)="saveStock(obj)">Save</button></td>
+
+    </tr>
+</table>

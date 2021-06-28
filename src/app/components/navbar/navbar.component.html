@@ -1,0 +1,12 @@
+<mat-toolbar color="primary">
+    <span><a mat-icon-button style="color:white;" routerLink="/">OK Money</a></span>
+    <span class="example-spacer"></span>
+    <a *ngIf="!loggedIn" mat-icon-button routerLink="login" style="color:white;">Login</a>
+    <a *ngIf="loggedIn" routerLink="topstocks" mat-icon-button style="margin-right: 120px; color:white;">Top Performing
+        Stocks</a>
+    <a *ngIf="loggedIn" routerLink="niftystocks" mat-icon-button style="margin-right: 120px; color:white;">Nifty
+        Stocks</a>
+
+    <a *ngIf="loggedIn" mat-icon-button style="margin-right: 50px; color:white;">{{user}}</a>
+    <a *ngIf="loggedIn" (click)="logoutUser()" mat-icon-button style="margin-right: 50px; color:white;">LogOut</a>
+</mat-toolbar>
